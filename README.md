@@ -22,20 +22,44 @@ Finally, a stiffened version **polyTEOS10\_stif** of the equation of state is al
 More details on these approximations of the TEOS-10 equation of state are available in Roquet et al. (2016).
 
 
-Reference: Roquet, F., Madec, G., McDougall, T. J., and Barker, P. M., 2015. Accurate polynomial expressions for the 
+**Reference:** Roquet, F., Madec, G., McDougall, T. J., and Barker, P. M., 2015. Accurate polynomial expressions for the 
 density and specific volume of seawater using the TEOS-10 standard. Ocean Modelling, 90:29-43.
 
-Calculates in-situ density from Absolute Salinity, Conservative
-Temperature and pressure, using the computationally-efficient 55-term
-polynomial expression for density (Roquet et al., 2014).
+
+## Fortran code
+
+The file `polyTEOS10_bsq.F90` includes fortran procedures to compute in-situ density, thermal expansion and haline contraction coefficients.
+It also provides an approximation to convert conservative temperature into potential temperature, useful in ocean models
+to compute air-sea fluxes.
+
+We propose only the **polyTEOS10_bsq** approximation in Fortran, as this is the one that is generally most well
+suited for most ocean models. Note that the ocean model [NEMO](http://www.nemo-ocean.eu/) uses this equation of state
+as the standard since version 3.6.
+
+A fortran version of **polyTEOS10_75t** is also available as part of the standard [TEOS-10 package](http://www.teos-10.org/software.html).
 
 
-Note that the 55-term equation has been fitted in a restricted range of
-parameter space, and is most accurate inside the "oceanographic funnel"
-described in McDougall et al. (2003).  The GSW library function
-"gsw_infunnel(SA,CT,p)" is available to be used if one wants to test if
-some of one's data lies outside this "funnel".
+## Python code
 
+The four versions of polyTEOS10 are coded in the python script `polyTEOS10.py`.
+
+## Matlab code
+
+Each version of polyTEOS10 is also distributed for Matlab:
+* `polyTEOS10_bsq.m`
+* `polyTEOS10_55t.m`
+* `polyTEOS10_75t.m`
+* `polyTEOS10_stif.m`
+
+## Contributors
+
+Fabien Roquet (Department of Meteorology at Stockholm University). 
+More information on the author on his [personal webpage](http://www.su.se/profiles/froqu)
+
+
+## License
+
+This software is distributed under the terms of the GNU GENERAL PUBLIC LICENSE v3. The GNU General Public License is a free, copyleft license for software and other kinds of works.
 
 
 
