@@ -36,7 +36,7 @@ We propose only the **polyTEOS10_bsq** approximation in Fortran, as this is the 
 suited for most ocean models. Note that the ocean model [NEMO](http://www.nemo-ocean.eu/) uses this equation of state
 as the standard since version 3.6.
 
-A fortran version of **polyTEOS10_75t** is also available as part of the standard [TEOS-10 package](http://www.teos-10.org/software.html).
+A fortran version of **polyTEOS10_75t** is also available as part of the standard [TEOS-10 package](http://www.teos-10.org/software.htm).
 
 
 ## Python code
