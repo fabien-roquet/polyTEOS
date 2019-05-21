@@ -535,7 +535,7 @@ def polyTEOS10_55t(SA,CT,p):
 def polyTEOS10_75t(SA,CT,p):
     
     # reduced variables
-    SAu = 40.*35.16504/35.; CTu = 40.; Zu=1e4; deltaS = 32.
+    SAu = 40.*35.16504/35.; CTu = 40.; Zu=1e4; deltaS = 24.
     ss   = npy.sqrt ( (SA+deltaS)/SAu )
     tt   = CT / CTu
     pp   =   p / Zu
